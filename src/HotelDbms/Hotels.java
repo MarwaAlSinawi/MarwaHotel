@@ -6,6 +6,7 @@ import java.sql.Driver;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.Random;
 import java.util.Scanner;
@@ -96,7 +97,8 @@ public class Hotels {
         String user = "sa";
         String pass = "root";
 		
-        String sql = "UPDATE Hotels SET hotel_name = ?, hotel_location = ?,created_date = ?, updated_date = ? WHERE id = ?";
+        String sql = "UPDATE Hotels SET hotel_name = ?, hot"
+        		+ "el_location = ?,created_date = ?, updated_date = ? WHERE id = ?";
         Scanner sc = new Scanner(System.in);
         System.out.print("Enter the id of the row to update: ");
         int id = sc.nextInt();
@@ -136,7 +138,55 @@ public class Hotels {
         	System.out.println(e);
         	}
         }
+	public static  void readFromTable(int insert) throws SQLException{
+		String url = "jdbc:sqlserver://localhost:1433;databaseName=hotelsystem;encrypt=true;trustServerCertificate=true";
+        String user = "sa";
+        String pass = "root";
+		Scanner sa=new Scanner(System.in);
+		
+    	System.out.println("Enter How many Rows you want to see ?");
+        insert =sa.nextInt();
+        
+        int count=0;
+        String sql="SELECT * FROM Hotels";
+       
+        
+       
+        Connection con = null;
+        
+        try {
+     	   Driver driver = (Driver) Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver").newInstance();
+	            // Registering drivers
+	            DriverManager.registerDriver(driver);
+	            // Reference to connection interface
+	            con = DriverManager.getConnection(url, user,
+	                    pass);
+        Statement st = con.createStatement();
+        
+	     ResultSet result=st.executeQuery(sql);
+	     while(result.next()&&count<insert) {
+	    	 int id=result.getInt("id");
+	    	 String Mname=result.getString("hotel_name");
+	    	 String Mlocation=result.getString("hotel_location");
+	    	 Date m=result.getDate("created_date");
+	    	 Date s=result.getDate("updated_date");
+	    	 boolean Activated=result.getBoolean("is_Active");
+	    	
+	  System.out.println(id+" "+Mname+" "+Mlocation+" "+m+" "+s+" "+Activated);
+	  count++;
+        
+	     }
+	     con.close();
+        }
+        catch (Exception ex) {
+            System.err.println(ex);
+        }
+		
 		}
+	
+	
+	}
+	
 
 	
 		

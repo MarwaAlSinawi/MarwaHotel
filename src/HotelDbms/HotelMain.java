@@ -56,7 +56,8 @@ public class HotelMain {
 //				insertValue.insertIntoTable();
 //				
 //				Hotels searchId =new Hotels();
-				Hotels.updateById();
+				//Hotels.updateById();
+				Hotels.readFromTable(10);
 				
 				
 				
