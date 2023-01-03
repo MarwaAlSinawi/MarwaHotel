@@ -52,8 +52,12 @@ public class HotelMain {
 				
 				break;
 			case 2:
-				Hotels insertValue = new Hotels();
-				insertValue.insertIntoTable();
+//				Hotels insertValue = new Hotels();
+//				insertValue.insertIntoTable();
+//				
+//				Hotels searchId =new Hotels();
+				Hotels.updateById();
+				
 				
 				
 				menueFunction();
