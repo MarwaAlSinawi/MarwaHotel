@@ -80,11 +80,31 @@ public class Hotels {
 	}
 
 	public static void makeIsActiveFalseById() {
-		// Scanner sa=new Scanner(System.in);
-		// System.out.println("Enter the ID you want to make it unactive");
-		// int insert =sa.nextInt();
-
-		// String sql ="UPDATE Hotels WHERE SET is_Active= False WHERE id=? ";
+		
+	    	
+	    	String url = "jdbc:sqlserver://localhost:1433;databaseName=hotelsystem;encrypt=true;trustServerCertificate=true";
+	        String user = "sa";
+	        String pass = "root";
+	        Connection con = null;
+	        try {
+	            Driver driver = (Driver) Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver").newInstance();
+	            DriverManager.registerDriver(driver);
+	            con = DriverManager.getConnection(url, user, pass);
+	            Statement st = con.createStatement();
+	            Scanner sa=new Scanner(System.in);
+	        	System.out.println("Enter id that you want to unactived: ");
+	            int idinput =sa.nextInt();
+	            int count=0;
+	            String sql = "UPDATE Hotels SET is_Active = 'false' "+" WHERE id = '"+idinput+"'";
+	            ResultSet rs=st.executeQuery(sql);
+	            }
+	        catch (Exception ex) {
+	            System.err.println(ex);
+	        }
+		 	
+		 
+		 
+		 
 
 	}
 

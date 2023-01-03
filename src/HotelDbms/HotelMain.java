@@ -59,7 +59,8 @@ public class HotelMain {
 				//Hotels.updateById();
 				//Hotels.readFromTable(10);
 				//Hotels.updateById();
-				Hotels.deleteById();
+				//Hotels.deleteById();
+				Hotels.makeIsActiveFalseById();
 				
 				
 				menueFunction();
