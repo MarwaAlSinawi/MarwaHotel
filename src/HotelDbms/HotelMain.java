@@ -58,7 +58,8 @@ public class HotelMain {
 //				Hotels searchId =new Hotels();
 				//Hotels.updateById();
 				//Hotels.readFromTable(10);
-				Hotels.updateById();
+				//Hotels.updateById();
+				Hotels.deleteById();
 				
 				
 				menueFunction();

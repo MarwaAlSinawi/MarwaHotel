@@ -205,6 +205,30 @@ public class Hotels {
             System.err.println(ex);
         }	
 	}
+	public static void deleteById() {
+		
+		String url = "jdbc:sqlserver://localhost:1433;databaseName=hotelsystem;encrypt=true;trustServerCertificate=true";
+        String user = "sa";
+        String pass = "root";
+        Connection con = null;
+        try {
+            Driver driver = (Driver) Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver").newInstance();
+            DriverManager.registerDriver(driver);
+            con = DriverManager.getConnection(url, user, pass);
+            Statement st = con.createStatement();
+            Scanner sa=new Scanner(System.in);
+        	System.out.println("Enter id: ");
+            int idinput =sa.nextInt();
+            int count=0;
+            String sql ="DELETE FROM Hotels WHERE id = '"+idinput+"'";
+            ResultSet rs=st.executeQuery(sql);
+            }
+        catch (Exception ex) {
+            System.err.println(ex);
+        }
+        }
+		
+		
 }
 
 	
