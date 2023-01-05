@@ -53,14 +53,14 @@ public class HotelMain {
 				break;
 			case 2:
 //				Hotels insertValue = new Hotels();
-//				insertValue.insertIntoTable();
+				Hotels.insertIntoTable(10);
 //				
 //				Hotels searchId =new Hotels();
 				//Hotels.updateById();
 				//Hotels.readFromTable(10);
 				//Hotels.updateById();
 				//Hotels.deleteById();
-				Hotels.makeIsActiveFalseById();
+				//Hotels.makeIsActiveFalseById();
 				
 				
 				menueFunction();

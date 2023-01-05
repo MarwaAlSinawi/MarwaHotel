@@ -43,13 +43,12 @@ public class Hotels {
 
 	}
 
-	public static void insertIntoTable() {
+	public static void insertIntoTable(int insert) {
 		String url = "jdbc:sqlserver://localhost:1433;databaseName=hotelsystem;encrypt=true;trustServerCertificate=true";
 		String user = "sa";
 		String pass = "root";
 		Scanner sa = new Scanner(System.in);
-		System.out.println("How many numbers of rows to be inserted");
-		int insert = sa.nextInt();
+	;
 		String hotel_name = "Bustan";
 		String hotel_location = "Ruwi";
 		String created_date = "2022-06-26";
@@ -237,7 +236,7 @@ public class Hotels {
             con = DriverManager.getConnection(url, user, pass);
             Statement st = con.createStatement();
             Scanner sa=new Scanner(System.in);
-        	System.out.println("Enter id: ");
+        	System.out.println("Enter id that you want to delete: ");
             int idinput =sa.nextInt();
             int count=0;
             String sql ="DELETE FROM Hotels WHERE id = '"+idinput+"'";
