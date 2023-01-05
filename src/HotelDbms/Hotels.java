@@ -215,6 +215,49 @@ public class Hotels {
 		}
 
 	}
+	
+	public static void readFromTableUserInput() throws SQLException {
+		String url = "jdbc:sqlserver://localhost:1433;databaseName=hotelsystem;encrypt=true;trustServerCertificate=true";
+		String user = "sa";
+		String pass = "root";
+		Scanner sa = new Scanner(System.in);
+
+		System.out.println("Enter How many Rows you want to see ?");
+		int insert = sa.nextInt();
+
+		int count = 0;
+		String sql = "SELECT * FROM Hotels";
+
+		Connection con = null;
+
+		try {
+			Driver driver = (Driver) Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver").newInstance();
+			// Registering drivers
+			DriverManager.registerDriver(driver);
+			// Reference to connection interface
+			con = DriverManager.getConnection(url, user, pass);
+			Statement st = con.createStatement();
+
+			ResultSet result = st.executeQuery(sql);
+			while (result.next() && count < insert) {
+				int id = result.getInt("id");
+				String Mname = result.getString("hotel_name");
+				String Mlocation = result.getString("hotel_location");
+				Date m = result.getDate("created_date");
+				Date s = result.getDate("updated_date");
+				boolean Activated = result.getBoolean("is_Active");
+
+				System.out.println(id + " " + Mname + " " + Mlocation + " " + m + " " + s + " " + Activated);
+				count++;
+
+			}
+			con.close();
+		} catch (Exception ex) {
+			System.err.println(ex);
+		}
+
+	}
+
 
 	public static void getById() {
 		String url = "jdbc:sqlserver://localhost:1433;databaseName=hotelsystem;encrypt=true;trustServerCertificate=true";

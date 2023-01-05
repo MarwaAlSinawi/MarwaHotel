@@ -96,20 +96,26 @@ public class HotelMain {
 			case 5:
 				
 				//to make it return false?
-				//Hotels.makeIsActiveFalseById();
+				Hotels.makeIsActiveFalseById();
 				
 				
+				
+				break;
+			case 6:
 				//to make it return true?
 				Hotels.makeIsActivTrueById();
 				menueFunction();
-				break;
-			case 6:
-				
 				
 
 				break;
 
 			case 7: 
+				Hotels.readFromTableUserInput();
+				
+				break;
+				
+				
+			case 8: 
 				System.out.println("bye..");
 				System.exit(0);
 				break;
