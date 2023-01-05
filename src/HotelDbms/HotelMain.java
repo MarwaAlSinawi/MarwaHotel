@@ -12,8 +12,9 @@ public class HotelMain {
 		System.out.println("3.Insert 1 hotel ");
 		System.out.println("4. Print 10 hotels");
 		System.out.println("5. Make first 10 hotels 'is_Active' = false");
-		System.out.println("6. Print hotel information by user input");
-		System.out.println("7.- Exit App");
+		System.out.println("6. Make first 10 hotels 'is_Active' = true");
+		System.out.println("7. Print hotel information by user input");
+		System.out.println("8.- Exit App");
 		
 	}
 	public static void main(String[] args)throws Throwable {
@@ -51,15 +52,29 @@ public class HotelMain {
 				menueFunction();
 				
 				break;
-			case 2:
-//				Hotels insertValue = new Hotels();
-				Hotels.insertIntoTable(10);
-//				
-//				Hotels searchId =new Hotels();
+			case 2 :
+				//Hotels insertValue = new Hotels();
+				//to insert 10,000 ?
+				Hotels.insertIntoTable(10000);
+				
+				
+				
+				//how to update the id?
 				//Hotels.updateById();
-				//Hotels.readFromTable(10);
+				
+				
+				//how to get the id you want?
+				//Hotels.getById();
+				
+				
+				//update the id by the name and location that i been given?
 				//Hotels.updateById();
+				
+				
+				//it will delete the row that i have chose by the ID?
 				//Hotels.deleteById();
+				
+				//Make it the  IsActive into false ?
 				//Hotels.makeIsActiveFalseById();
 				
 				
@@ -67,18 +82,26 @@ public class HotelMain {
 				break;
 
 			case 3:
-			
+				
+				Hotels.insertIntoTable(1);
 				menueFunction();
 				break;
 
 			case 4:
-				
+				  // to read 10 values in table hotel?
+				 Hotels.readFromTable(10);
 				menueFunction();
 
 				break;
 			case 5:
-               
-
+				
+				//to make it return false?
+				//Hotels.makeIsActiveFalseById();
+				
+				
+				//to make it return true?
+				Hotels.makeIsActivTrueById();
+				menueFunction();
 				break;
 			case 6:
 				
