@@ -97,6 +97,7 @@ public class HotelMain {
 				
 				//to make it return false?
 				Hotels.makeIsActiveFalseById();
+				menueFunction();
 				
 				
 				
@@ -111,6 +112,7 @@ public class HotelMain {
 
 			case 7: 
 				Hotels.readFromTableUserInput();
+				menueFunction();
 				
 				break;
 				
