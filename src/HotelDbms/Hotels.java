@@ -14,13 +14,13 @@ import java.util.Scanner;
 public class Hotels {
 	public static boolean tableHotels() {
 
-		String url = "jdbc:sqlserver://localhost:1433;databaseName=hotelsystem;encrypt=true;trustServerCertificate=true";
+		String url = "jdbc:sqlserver://localhost:1433;databaseName=hotelsystemm;encrypt=true;trustServerCertificate=true";
 		String user = "sa";
 		String pass = "root";
 
-		String sqlDB = "CREATE TABLE Hotels " + "(id INTEGER PRIMARY KEY  , " + " hotel_name VARCHAR(50) NOT NULL, "
+		String sqlDB = "CREATE TABLE Hotels " + "(id INTEGER PRIMARY KEY  IDENTITY(1,1), " + " hotel_name VARCHAR(50) NOT NULL, "
 				+ "hotel_location  VARCHAR(50), " + " created_date date NOT NULL, " + "updated_date date , "
-				+ "is_Active  BIT NOT NULL )";
+				+ "is_Active  tinyint NOT NULL )";
 		Connection conn = null;
 		try {
 			Driver driver = (Driver) Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver").newInstance();
@@ -43,40 +43,54 @@ public class Hotels {
 
 	}
 
-	public static void insertIntoTable(int insert) {
-		String url = "jdbc:sqlserver://localhost:1433;databaseName=hotelsystem;encrypt=true;trustServerCertificate=true";
+	 public static void insertIntoTable() {
+		String url = "jdbc:sqlserver://localhost:1433;databaseName=hotelsystemm;encrypt=true;trustServerCertificate=true";
 		String user = "sa";
-		String pass = "root";
-		Scanner sa = new Scanner(System.in);
-	;
-		String hotel_name = "Bustan";
-		String hotel_location = "Ruwi";
-		String created_date = "2022-06-26";
-		String updated_date = "2023-06-26";
-		boolean is_Active = true;
+	    String pass = "root";
+	   
+	    Scanner scanner = new Scanner(System.in);
+	   
+		  
+	    String hotel_name = "bustan" ;
+	    String hotel_location = "Oman";
+	    String created_date = "2022-11-06";
+	    String updated_date = "2023-01-08";
+	    int is_Active = 1;
+		
+	    System.out.print("How many num of rows you be insert ? ");
+	    Integer insert = scanner.nextInt();
 		Random rn = new Random();
 		Integer numberToAdd = rn.nextInt(100);
-		for (int i = 0; i <= insert; i++) {
-			String sql = "insert into Hotels values (" + i + numberToAdd + ", '" + hotel_name + i + "', '"
-					+ hotel_location + i + "', '" + created_date + "', '" + updated_date + "', '" + is_Active + "')";
-			Connection con = null;
-			try {
-				Driver driver = (Driver) Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver").newInstance();
-				DriverManager.registerDriver(driver);
-				con = DriverManager.getConnection(url, user, pass);
-				Statement st = con.createStatement();
-				int m = st.executeUpdate(sql);
-				if (m >= 0)
-					System.out.println("insert data successfully");
-				else
-					System.out.println("faild inserted ");
-				con.close();
-			} catch (Exception ex) {
-				System.err.println(ex);
-			}
-		}
-
-	}
+	   
+	 // Inserting data using SQL query
+	    for(int i=0; i<=insert;i++) {
+        String sqlData = "insert into Hotels values('"+ hotel_name +"' ,'" + hotel_location + "', '"+created_date+"','"+updated_date+"' , "+is_Active+")";
+        Connection con = null;
+		
+		
+	    try {
+	        Driver driver = (Driver) Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver").newInstance();
+	        DriverManager.registerDriver(driver);
+	        con = DriverManager.getConnection(url, user, pass);
+	        Statement st = con.createStatement();
+	       
+	     // Executing query
+            int m = st.executeUpdate(sqlData);
+            if (m >=  0)
+                System.out.println(
+                        "inserted successfully : " + sqlData);
+            else
+                System.out.println("insertion failed");
+            // Closing the connections
+            con.close();
+	    }
+            catch (Exception ex) {
+    	        // Display message when exceptions occurs
+    	        System.err.println(ex);
+    	    }
+    	   
+    	    }
+	    }
 
 	public static void makeIsActiveFalseById() {
 		
@@ -113,7 +127,7 @@ public class Hotels {
 		            con = DriverManager.getConnection(url, user, pass);
 		            Statement st = con.createStatement();
 		            Scanner sa=new Scanner(System.in);
-		        	System.out.println("Enter id that you want to unactived: ");
+		        	System.out.println("Enter id that you want to actived: ");
 		            int idinput =sa.nextInt();
 		            int count=0;
 		            String sql = "UPDATE Hotels SET is_Active = 'true' "+" WHERE id <= '"+idinput+"'";
@@ -157,7 +171,8 @@ public class Hotels {
 
 			String sql2 = "SELECT * FROM Hotels WHERE id = ?";
 			PreparedStatement pstmt2 = con.prepareStatement(sql2);
-			pstmt2.setInt(1, id);
+			
+			pstmt2.setInt(1, id);  
 			ResultSet rs = pstmt2.executeQuery();
 			if (rs.next()) {
 				String hotelName = rs.getString("hotel_name");

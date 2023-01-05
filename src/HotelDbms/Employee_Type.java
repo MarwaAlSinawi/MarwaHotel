@@ -8,11 +8,11 @@ import java.sql.Statement;
 public class Employee_Type {
 public static boolean Employee_Type() {
 		
-		String url = "jdbc:sqlserver://localhost:1433;databaseName=hotelsystem;encrypt=true;trustServerCertificate=true";
+		String url = "jdbc:sqlserver://localhost:1433;databaseName=hotelsystemm;encrypt=true;trustServerCertificate=true";
 		String user = "sa";
 		String pass = "root";
-		String Sql = "CREATE TABLE Employee_Type " + "(id INTEGER PRIMARY KEY, " + " employee_type_name VARCHAR(50) NOT NULL, "
-				+ " created_date date NOT NULL, " + " updated_date date, " + " is_Active bit NOT NULL)";
+		String Sql = "CREATE TABLE Employee_Type " + "(id INTEGER PRIMARY KEY IDENTITY(1,1), " + " employee_type_name VARCHAR(50) NOT NULL, "
+				+ " created_date date NOT NULL, " + " updated_date date, " + " is_Active tinyint NOT NULL)";
 		
 		Connection conn = null;
 		try {

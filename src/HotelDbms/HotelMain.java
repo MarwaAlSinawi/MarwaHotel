@@ -14,7 +14,8 @@ public class HotelMain {
 		System.out.println("5. Make first 10 hotels 'is_Active' = false");
 		System.out.println("6. Make first 10 hotels 'is_Active' = true");
 		System.out.println("7. Print hotel information by user input");
-		System.out.println("8.- Exit App");
+		System.out.println("8. Exit App");
+		System.out.println("9. insert data into Employees");
 		
 	}
 	public static void main(String[] args)throws Throwable {
@@ -32,6 +33,8 @@ public class HotelMain {
 			case 1:
 				Hotels Hotelsobj = new Hotels();
 				Hotelsobj.tableHotels();
+				
+
 				
 				RoomType RoomObj = new RoomType();
 				RoomObj.Room_Type();
@@ -55,7 +58,7 @@ public class HotelMain {
 			case 2 :
 				//Hotels insertValue = new Hotels();
 				//to insert 10,000 ?
-				Hotels.insertIntoTable(10000);
+//				Hotels.insertIntoTable(10000);
 				
 				
 				
@@ -83,8 +86,17 @@ public class HotelMain {
 
 			case 3:
 				
-				Hotels.insertIntoTable(1);
-				menueFunction();
+//				Hotels Hotelsobj2 = new Hotels();
+//				Hotelsobj2.insertIntoTable();
+				
+				//RoomType roomObj= new RoomType();
+				//roomObj.insertIntoTable();
+//				
+//				Room roomObj= new Room();
+//				roomObj.insertIntoTable();
+//				
+				Guests GuestsObj1=new Guests();
+				GuestsObj1.insertIntoTable();
 				break;
 
 			case 4:
@@ -120,6 +132,10 @@ public class HotelMain {
 			case 8: 
 				System.out.println("bye..");
 				System.exit(0);
+				break;
+			case 9: 
+				Employees EmployeesObj=new Employees ();
+				EmployeesObj.insertIntoTable();
 				break;
 			
 
