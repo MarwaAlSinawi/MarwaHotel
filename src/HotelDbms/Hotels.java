@@ -95,7 +95,7 @@ public class Hotels {
 	public static void makeIsActiveFalseById() {
 		
 	    	
-	    	String url = "jdbc:sqlserver://localhost:1433;databaseName=hotelsystem;encrypt=true;trustServerCertificate=true";
+	    	String url = "jdbc:sqlserver://localhost:1433;databaseName=hotelsystemm;encrypt=true;trustServerCertificate=true";
 	        String user = "sa";
 	        String pass = "root";
 	        Connection con = null;
@@ -108,7 +108,7 @@ public class Hotels {
 	        	System.out.println("Enter id that you want to unactived: ");
 	            int idinput =sa.nextInt();
 	            int count=0;
-	            String sql = "UPDATE Hotels SET is_Active = 'false' "+" WHERE id <= '"+idinput+"'";
+	            String sql = "UPDATE Hotels SET is_Active = 0  WHERE id <= "+idinput;
 	            ResultSet rs=st.executeQuery(sql);
 	            }
 	        catch (Exception ex) {
@@ -117,7 +117,7 @@ public class Hotels {
 	        }public static void makeIsActivTrueById() {
 	    		
 		    	
-		    	String url = "jdbc:sqlserver://localhost:1433;databaseName=hotelsystem;encrypt=true;trustServerCertificate=true";
+		    	String url = "jdbc:sqlserver://localhost:1433;databaseName=hotelsystemm;encrypt=true;trustServerCertificate=true";
 		        String user = "sa";
 		        String pass = "root";
 		        Connection con = null;
@@ -130,7 +130,7 @@ public class Hotels {
 		        	System.out.println("Enter id that you want to actived: ");
 		            int idinput =sa.nextInt();
 		            int count=0;
-		            String sql = "UPDATE Hotels SET is_Active = 'true' "+" WHERE id <= '"+idinput+"'";
+		            String sql = "UPDATE Hotels SET is_Active = 1 "+" WHERE id <= '"+idinput+"'";
 		            ResultSet rs=st.executeQuery(sql);
 		            }
 		        catch (Exception ex) {
@@ -148,7 +148,7 @@ public class Hotels {
 		String user = "sa";
 		String pass = "root";
 
-		String sql = "UPDATE Hotels SET hotel_name = ?, hot"
+		String sql = "UPDATE Hotels SET hotel_name = ?, hotel"
 				+ "el_location = ?,created_date = ?, updated_date = ? WHERE id = ?";
 		Scanner sc = new Scanner(System.in);
 		System.out.print("Enter the id of the row to update: ");
