@@ -96,15 +96,19 @@ public class HotelMain {
 //				Room roomObj= new Room();
 //				roomObj.insertIntoTable();
 //				
-				//Guests GuestsObj1=new Guests();
-				//GuestsObj1.insertIntoTable();
+				
+				
+				
+				         //1000 guests?
+				Guests GuestsObj1=new Guests();
+				GuestsObj1.insertIntoTable(1000);
 				
 				//Employee_Type empObj = new Employee_Type();
 				//empObj.insertIntoTableEmp();
 				
 				    //20 employees?
-				Employees employeeObj = new Employees();
-				employeeObj.insertIntoTableEmployees(20);
+				//Employees employeeObj = new Employees();
+				//employeeObj.insertIntoTableEmployees(20);
 				break;
 
 			case 4:

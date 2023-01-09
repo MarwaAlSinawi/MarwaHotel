@@ -39,7 +39,7 @@ public static void Guests() {
 		}
 	
 }
-	public static void insertIntoTable(){
+	public static void insertIntoTable(Integer insert){
     	String url = "jdbc:sqlserver://localhost:1433;databaseName=hotelsystemm;encrypt=true;trustServerCertificate=true";
 		String user = "sa";
 	    String pass = "root";
@@ -57,8 +57,8 @@ public static void Guests() {
     String updated_date = "2027-01-09";
     int is_Active = 1;
    
-    System.out.print("How many num of rows you be insert ? ");
-    Integer insert = scanner.nextInt();
+    System.out.print("How many num of rows you be insert in Guests data  ? ");
+     insert = scanner.nextInt();
 	Random rn = new Random();
 	Integer numberToAdd = rn.nextInt(100);
    
