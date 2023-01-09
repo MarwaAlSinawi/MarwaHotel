@@ -10,7 +10,7 @@ public class HotelMain {
 		System.out.println("Welcome...Select one of the options:");
 		System.out.println("1.crate tables ");
 		System.out.println("2.Insert 10,000 hotels");
-		System.out.println("3.Insert 1 hotel ");
+		System.out.println("3.Insert values for all the tables  ");
 		System.out.println("4. Print 10 hotels");
 		System.out.println("5. Make first 10 hotels 'is_Active' = false");
 		System.out.println("6. Make first 10 hotels 'is_Active' = true");
@@ -87,8 +87,8 @@ public class HotelMain {
 
 			case 3:
 				
-//				Hotels Hotelsobj2 = new Hotels();
-//				Hotelsobj2.insertIntoTable();
+				Hotels Hotelsobj2 = new Hotels();
+				Hotelsobj2.insertIntoTable(100);
 				
 				//RoomType roomObj= new RoomType();
 				//roomObj.insertIntoTable();
@@ -99,12 +99,12 @@ public class HotelMain {
 				//Guests GuestsObj1=new Guests();
 				//GuestsObj1.insertIntoTable();
 				
-				Employee_Type empObj = new Employee_Type();
-				empObj.insertIntoTableEmp();
+				//Employee_Type empObj = new Employee_Type();
+				//empObj.insertIntoTableEmp();
 				
 				
-				//Employees employeeObj = new Employees();
-				//employeeObj.insertIntoTableEmployees();
+				Employees employeeObj = new Employees();
+				employeeObj.insertIntoTableEmployees();
 				break;
 
 			case 4:

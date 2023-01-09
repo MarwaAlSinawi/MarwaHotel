@@ -43,7 +43,7 @@ public class Hotels {
 
 	}
 
-	 public static void insertIntoTable() {
+	 public static void insertIntoTable(  Integer insert) {
 		String url = "jdbc:sqlserver://localhost:1433;databaseName=hotelsystemm;encrypt=true;trustServerCertificate=true";
 		String user = "sa";
 	    String pass = "root";
@@ -58,7 +58,7 @@ public class Hotels {
 	    int is_Active = 1;
 		
 	    System.out.print("How many num of rows you be insert ? ");
-	    Integer insert = scanner.nextInt();
+	     insert = scanner.nextInt();
 		Random rn = new Random();
 		Integer numberToAdd = rn.nextInt(100);
 	   
