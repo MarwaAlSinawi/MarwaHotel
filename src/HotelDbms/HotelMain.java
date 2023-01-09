@@ -86,9 +86,9 @@ public class HotelMain {
 				break;
 
 			case 3:
-				
-				Hotels Hotelsobj2 = new Hotels();
-				Hotelsobj2.insertIntoTable(100);
+				//There have to be More than 100 hotels?
+				//Hotels Hotelsobj2 = new Hotels();
+				//Hotelsobj2.insertIntoTable(100);
 				
 				//RoomType roomObj= new RoomType();
 				//roomObj.insertIntoTable();
@@ -102,9 +102,9 @@ public class HotelMain {
 				//Employee_Type empObj = new Employee_Type();
 				//empObj.insertIntoTableEmp();
 				
-				
+				    //20 employees?
 				Employees employeeObj = new Employees();
-				employeeObj.insertIntoTableEmployees();
+				employeeObj.insertIntoTableEmployees(20);
 				break;
 
 			case 4:

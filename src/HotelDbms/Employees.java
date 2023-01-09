@@ -41,7 +41,7 @@ public class Employees {
 		return false;
 	}
 
-	public static void insertIntoTableEmployees() {
+	public static void insertIntoTableEmployees(Integer insert) {
 		String url = "jdbc:sqlserver://localhost:1433;databaseName=hotelsystemm;encrypt=true;trustServerCertificate=true";
 		String user = "sa";
 	    String pass = "root";
@@ -57,8 +57,8 @@ public class Employees {
 	    int is_Active = 1;
 	   
 	   
-	    System.out.print("How many num of rows you be insert ? ");
-	    Integer insert = scanner.nextInt();
+	    System.out.print("How many num of rows you be insert Employees data ? ");
+	    insert = scanner.nextInt();
 		Random rn = new Random();
 		Integer numberToAdd = rn.nextInt(100);
 		
