@@ -9,7 +9,7 @@ import java.util.Scanner;
 
 public class Guests {
 
-public static boolean Guests() {
+public static void Guests() {
 		
 		String url = "jdbc:sqlserver://localhost:1433;databaseName=hotelsystemm;encrypt=true;trustServerCertificate=true";
 		String user = "sa";
@@ -28,7 +28,7 @@ public static boolean Guests() {
 			int m = st.executeUpdate(sql);
 			if (m >= 0) {
 				System.out.println("Created table in given database...");
-				return true;
+			
 			} else {
 				System.out.println(" table already Created in given database...");
 			}
@@ -37,7 +37,7 @@ public static boolean Guests() {
 		catch (Exception ex) {
 			System.err.println(ex);
 		}
-	return false;
+	
 }
 	public static void insertIntoTable(){
     	String url = "jdbc:sqlserver://localhost:1433;databaseName=hotelsystemm;encrypt=true;trustServerCertificate=true";
@@ -51,10 +51,10 @@ public static boolean Guests() {
     String guest_phone = "968-12345678";
     int guest_accompanying_members = 19;
     int guest_payment_amount = 222;
-    int room_id = 1;
-    int hotel_id = 1;
+    int room_id = 15;
+    int hotel_id = 16;
     String created_date = "2023-01-05";
-    String updated_date = "2023-01-09";
+    String updated_date = "2027-01-09";
     int is_Active = 1;
    
     System.out.print("How many num of rows you be insert ? ");

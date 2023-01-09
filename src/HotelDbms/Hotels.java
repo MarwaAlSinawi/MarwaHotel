@@ -166,7 +166,7 @@ public class Hotels {
 			pstmt.setString(2, "AlAmerat");
 			pstmt.setDate(3, new Date(System.currentTimeMillis()));
 			pstmt.setDate(4, new Date(System.currentTimeMillis()));
-			pstmt.setInt(5, id);
+			pstmt.setInt(5,  id);
 			pstmt.executeUpdate();
 
 			String sql2 = "SELECT * FROM Hotels WHERE id = ?";
@@ -231,7 +231,7 @@ public class Hotels {
 
 	}
 	
-	public static void readFromTableUserInput() throws SQLException {
+	public static void readFromTableUserInput() {
 		String url = "jdbc:sqlserver://localhost:1433;databaseName=hotelsystem;encrypt=true;trustServerCertificate=true";
 		String user = "sa";
 		String pass = "root";
@@ -272,8 +272,6 @@ public class Hotels {
 		}
 
 	}
-
-
 	public static void getById() {
 		String url = "jdbc:sqlserver://localhost:1433;databaseName=hotelsystem;encrypt=true;trustServerCertificate=true";
         String user = "sa";

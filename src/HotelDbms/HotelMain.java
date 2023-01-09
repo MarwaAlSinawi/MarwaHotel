@@ -1,5 +1,6 @@
 package HotelDbms;
 
+import java.io.IOException;
 import java.util.Scanner;
 
 
@@ -18,7 +19,7 @@ public class HotelMain {
 		System.out.println("9. insert data into Employees");
 		
 	}
-	public static void main(String[] args)throws Throwable {
+	public static void main(String[] args)throws IOException{
 
 		Scanner sc = new Scanner (System.in);
 		menueFunction();
@@ -95,14 +96,21 @@ public class HotelMain {
 //				Room roomObj= new Room();
 //				roomObj.insertIntoTable();
 //				
-				Guests GuestsObj1=new Guests();
-				GuestsObj1.insertIntoTable();
+				//Guests GuestsObj1=new Guests();
+				//GuestsObj1.insertIntoTable();
+				
+				Employee_Type empObj = new Employee_Type();
+				empObj.insertIntoTableEmp();
+				
+				
+				//Employees employeeObj = new Employees();
+				//employeeObj.insertIntoTableEmployees();
 				break;
 
 			case 4:
 				  // to read 10 values in table hotel?
-				 Hotels.readFromTable(10);
-				menueFunction();
+//				 Hotels.readFromTable(10);
+//				menueFunction();
 
 				break;
 			case 5:
@@ -134,8 +142,8 @@ public class HotelMain {
 				System.exit(0);
 				break;
 			case 9: 
-				Employees EmployeesObj=new Employees ();
-				EmployeesObj.insertIntoTable();
+				//Employees EmployeesObj=new Employees ();
+				//EmployeesObj.insertIntoTable();
 				break;
 			
 

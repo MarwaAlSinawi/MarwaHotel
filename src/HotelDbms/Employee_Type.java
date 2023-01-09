@@ -4,6 +4,8 @@ import java.sql.Connection;
 import java.sql.Driver;
 import java.sql.DriverManager;
 import java.sql.Statement;
+import java.util.Random;
+import java.util.Scanner;
 
 public class Employee_Type {
 public static boolean Employee_Type() {
@@ -33,7 +35,53 @@ public static boolean Employee_Type() {
 			System.err.println(ex);
 		}
 	return false;
-	}
+	}public static void insertIntoTableEmp() {
+		String url = "jdbc:sqlserver://localhost:1433;databaseName=hotelsystemm;encrypt=true;trustServerCertificate=true";
+		String user = "sa";
+	    String pass = "root";
+	   
+	   
+	    Scanner scanner = new Scanner(System.in);
+	   
+		  
+	    String employee_type_name = "Abdullah" ;
+	    String created_date = "2023-03-11";
+	    String updated_date = "2023-06-12";
+	    int is_Active = 1;
+	   
+	    System.out.print("How many num of rows you be insert ? ");
+	    Integer insert = scanner.nextInt();
+		Random rn = new Random();
+		Integer numberToAdd = rn.nextInt(100);
+		
+		 // Inserting data using SQL query
+	    for(int i=0; i<=insert;i++) {
+        String sqlData = "insert into Employee_Type values('"+ employee_type_name +"' ,'"+created_date+"','"+updated_date+"' , "+is_Active+")";
+        Connection con = null;
+		
+	    try {
+	        Driver driver = (Driver) Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver").newInstance();
+	        DriverManager.registerDriver(driver);
+	        con = DriverManager.getConnection(url, user, pass);
+	        Statement st = con.createStatement();
+	       
+	     // Executing query
+            int m = st.executeUpdate(sqlData);
+            if (m >=  0)
+                System.out.println(
+                        "inserted successfully : " + sqlData);
+            else
+                System.out.println("insertion failed");
+            // Closing the connections
+            con.close();
+	    }
+            catch (Exception ex) {
+    	        // Display message when exceptions occurs
+    	        System.err.println(ex);
+    	    }
+    	   
+    	    }
+	    }
 
 	
 

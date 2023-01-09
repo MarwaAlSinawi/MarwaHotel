@@ -41,7 +41,7 @@ public class Employees {
 		return false;
 	}
 
-	public static void insertIntoTable() {
+	public static void insertIntoTableEmployees() {
 		String url = "jdbc:sqlserver://localhost:1433;databaseName=hotelsystemm;encrypt=true;trustServerCertificate=true";
 		String user = "sa";
 	    String pass = "root";
@@ -51,9 +51,9 @@ public class Employees {
 	   
 		  
 	    int employee_type_id = 1 ;
-	    int room_id = 2;
-	    String created_date = "2023-01-26";
-	    String updated_date = "2025-01-06";
+	    int room_id = 17;
+	    String created_date = "2023-08-03";
+	    String updated_date = "2029-09-06";
 	    int is_Active = 1;
 	   
 	   
