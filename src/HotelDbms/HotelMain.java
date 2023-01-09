@@ -115,6 +115,12 @@ public class HotelMain {
 				  // to read 10 values in table hotel?
 //				 Hotels.readFromTable(10);
 //				menueFunction();
+				
+				
+				
+				     //3  reading from sql intoRooms types are-> 'STANDARD', 'DELUXE', 'SUITE'?
+				ReadRoomTable RoomType = new ReadRoomTable ();
+				RoomType.readFromTableRoomType();
 
 				break;
 			case 5:
