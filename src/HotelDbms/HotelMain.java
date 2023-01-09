@@ -11,7 +11,7 @@ public class HotelMain {
 		System.out.println("1.crate tables ");
 		System.out.println("2.Insert 10,000 hotels");
 		System.out.println("3.Insert values for all the tables  ");
-		System.out.println("4. Print 10 hotels");
+		System.out.println("4. Print all data  in RoomType");
 		System.out.println("5. Make first 10 hotels 'is_Active' = false");
 		System.out.println("6. Make first 10 hotels 'is_Active' = true");
 		System.out.println("7. Print hotel information by user input");
@@ -93,15 +93,15 @@ public class HotelMain {
 				//RoomType roomObj= new RoomType();
 				//roomObj.insertIntoTable();
 //				
-//				Room roomObj= new Room();
-//				roomObj.insertIntoTable();
+			Room roomObj= new Room();
+			roomObj.insertIntoTable();
 //				
 				
 				
 				
 				         //1000 guests?
-				Guests GuestsObj1=new Guests();
-				GuestsObj1.insertIntoTable(1000);
+				//Guests GuestsObj1=new Guests();
+				//GuestsObj1.insertIntoTable(1000);
 				
 				//Employee_Type empObj = new Employee_Type();
 				//empObj.insertIntoTableEmp();

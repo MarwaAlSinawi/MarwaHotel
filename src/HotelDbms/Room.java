@@ -43,7 +43,7 @@ public static boolean Room() {
 	    Scanner scanner = new Scanner(System.in);
 	   
 	    int room_type_id = 1 ;
-	    int hotel_id = 1 ;
+	    int hotel_id = 118 ;
 	    String created_date = "2028-01-10";
 	    String updated_date = "2030-01-08";
 	    int is_Active = 1;

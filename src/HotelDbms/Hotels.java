@@ -51,7 +51,7 @@ public class Hotels {
 	    Scanner scanner = new Scanner(System.in);
 	   
 		  
-	    String hotel_name = "bustan" ;
+	    String hotel_name = "MQ" ;
 	    String hotel_location = "Oman";
 	    String created_date = "2022-11-06";
 	    String updated_date = "2023-01-08";
