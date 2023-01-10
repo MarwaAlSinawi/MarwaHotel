@@ -20,6 +20,8 @@ public class HotelMain {
 		System.out.println("10. Guests who's name end with 'E'");
 		System.out.println("11. Rooms where guests are paying more than 1000");
 		System.out.println("12.Count of guests who are staing in 'DELUXE' rooms");
+		System.out.println("13.Guests who are staing in rooms and served by employee who have 'A' in their name");
+		
 		
 	}
 	public static void main(String[] args)throws IOException{
@@ -171,6 +173,11 @@ public class HotelMain {
            case 12: 
 				
 				HotelManagement.delux();
+				menueFunction();
+				break;
+           case 13: 
+				
+				HotelManagement.FindingA();;
 				menueFunction();
 				break;
 

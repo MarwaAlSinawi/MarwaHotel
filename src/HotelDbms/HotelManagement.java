@@ -119,6 +119,39 @@ public  static void delux() {
 	
 }
 }
+}public  static void FindingA () {
+		String url = "jdbc:sqlserver://localhost:1433;databaseName=hotelsystemm;encrypt=true;trustServerCertificate=true";
+		String user = "sa";
+	    String pass = "root";
+	    Connection con = null;
+	    
+	{
+		
+		
+		String sql = "SELECT * FROM Guests \r\n"
+		 		+ "WHERE guest_name LIKE '%A%'";
+
+		 try {
+		     Driver driver = (Driver) Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver").newInstance();
+		     DriverManager.registerDriver(driver);
+		     con = DriverManager.getConnection(url, user, pass);
+		     Statement st = con.createStatement();
+
+				ResultSet result = st.executeQuery(sql);
+				while (result.next()) {
+					
+					String roomName = result.getString("guest_name");
+					
+
+					System.out.println(roomName);
+		     }
+		 }
+		 catch (Exception ex) {
+		System.out.println(ex);
+		 }
+		
 }
 }
+}
+
 
