@@ -21,7 +21,8 @@ public class HotelMain {
 		System.out.println("11. Rooms where guests are paying more than 1000");
 		System.out.println("12.Count of guests who are staing in 'DELUXE' rooms");
 		System.out.println("13.Guests who are staing in rooms and served by employee who have 'A' in their name");
-		
+		System.out.println("14.All rooms which are not active but room type is 'Deluxe'");
+		System.out.println("15.All room type in hotels who's name have 'H' or are active but have more than 5 rooms.");
 		
 	}
 	public static void main(String[] args)throws IOException{
@@ -180,7 +181,16 @@ public class HotelMain {
 				HotelManagement.FindingA();;
 				menueFunction();
 				break;
-
+           case 14: 
+				
+				HotelManagement.isActive0();;
+				menueFunction();
+				break;
+           case 15: 
+				
+				HotelManagement.HotelsH();
+				menueFunction();
+				break;
 			
 			}
 
